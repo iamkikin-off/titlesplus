@@ -9,6 +9,9 @@ func sendTitle(custom_title):
 	update_title(custom_title)
 
 func update_title_packet(sender, packet):
+	print("PACKET!!!!!!!!!!!!!!!!!!!!!!")
+	print(str(sender))
+	print(str(packet))
 	var title = packet.get("title", null)
 	if title == null:
 		print(PREFIX + "oh no invalid packet !>>! >! !>! ?!? !? ?!")
@@ -37,4 +40,4 @@ func _inject(hud):
 
 func update_title(title):
 	print(PREFIX + "I have sent a packet")
-	Network._send_P2P_Packet({"type": "update_title", "title": title}, "peers", 2, TITLE_CHANNEL)
+	Network._send_P2P_Packet({"type": "update_title", "title": title}, "peers", 2, Network.CHANNELS.ACTOR_UPDATE)

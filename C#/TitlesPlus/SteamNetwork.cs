@@ -8,13 +8,13 @@ public class SteamNetwork : IScriptMod {
     public bool ShouldRun(string path) => path == "res://Scenes/Singletons/SteamNetwork.gdc";
 
     public IEnumerable<Token> Modify(string path, IEnumerable<Token> tokens) {
-        
         var p2pPacket = new MultiTokenWaiter([
             t => t is IdentifierToken {Name: "_read_P2P_Packet"},
             t => t.Type is TokenType.Newline,
-            t => t is IdentifierToken {Type: TokenType.CfMatch},
+            t => t is IdentifierToken {Name: "PACKET_SIZE"},
+            t => t.Type is TokenType.CfMatch,
             t => t is IdentifierToken {Name: "type"},
-            t => t is IdentifierToken {Type: TokenType.Colon},
+            t => t.Type is TokenType.Colon,
             t => t.Type is TokenType.Newline,
         ], allowPartialMatch: true);
         
