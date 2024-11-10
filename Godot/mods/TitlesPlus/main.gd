@@ -12,7 +12,11 @@ func sendTitle(custom_title):
 func update_title_packet(sender, packet):
 	var title = packet.get("title", null)
 	if title == null:
-		_print_debug("Invalid packet received")
+		print(PREFIX + "Invalid packet received")
+		return
+	
+	if str(title).length() > 32:
+		print(PREFIX + "Illegal packet > 32 characters received")
 		return
 
 	title_api.register_title(sender, title)
