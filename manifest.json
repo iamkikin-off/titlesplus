@@ -1,0 +1,12 @@
+{
+    "Id": "TitlesPlus",
+    "PackPath": "TitlesPlus.pck",
+    "AssemblyPath": "TitlesPlus.dll",
+    "Metadata": {
+        "Name": "TitlesPlus",
+        "Author": "IamKikin & Nowaha",
+        "Version": "1.0.0",
+        "Description": "Set some beautiful titles above your name."
+    }
+}
+
