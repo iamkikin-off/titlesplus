@@ -1,0 +1,12 @@
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\bin\Debug\net8.0\TitlesPatching.deps.json
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\bin\Debug\net8.0\TitlesPatching.dll
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\bin\Debug\net8.0\TitlesPatching.pdb
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.csproj.AssemblyReference.cache
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.AssemblyInfoInputs.cache
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.AssemblyInfo.cs
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.csproj.CoreCompileInputs.cache
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.dll
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\refint\TitlesPatching.dll
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\TitlesPatching.pdb
+C:\Users\kerix\Downloads\TitlesPatching\TitlesPatching\TitlesPatching\obj\Debug\net8.0\ref\TitlesPatching.dll
