@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
 [ext_resource path="res://mods/TitlesPlus/titlesplus_menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons62.png" type="Texture" id=3]
 [ext_resource path="res://mods/TitlesPlus/Assets/UI/Setwings.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -83,6 +85,7 @@ margin_left = 91.88
 margin_top = -20.08
 margin_right = 154.0
 margin_bottom = -91.0
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Open" type="Button" parent="."]
@@ -95,6 +98,7 @@ margin_top = 59.575
 margin_right = 12.9931
 margin_bottom = 123.575
 text = "OPEN TITLES+"
+icon = ExtResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 anchor_left = 1.0
@@ -114,7 +118,7 @@ margin_bottom = 279.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/Scroll"]
 margin_right = 352.0
-margin_bottom = 356.0
+margin_bottom = 566.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
