@@ -1,5 +1,6 @@
 extends Node
 
+const DEBUG = false
 const TITLE_CHANNEL = 452329
 const PREFIX = "[TitlesPlus] "
 
@@ -9,35 +10,37 @@ func sendTitle(custom_title):
 	update_title(custom_title)
 
 func update_title_packet(sender, packet):
-	print("PACKET!!!!!!!!!!!!!!!!!!!!!!")
-	print(str(sender))
-	print(str(packet))
 	var title = packet.get("title", null)
 	if title == null:
-		print(PREFIX + "oh no invalid packet !>>! >! !>! ?!? !? ?!")
+		_print_debug("Invalid packet received")
 		return
 
 	title_api.register_title(sender, title)
 
 func _inject(hud):
-	print(PREFIX + "I have injected to the hud  - 1")
+	_print_debug("I have injected to the hud  - 1")
 	var main: Node = hud.get_child(0)
 	if main == null: return
 
 	var menu = load("res://mods/TitlesPlus/titlesplus_menu.tscn").instance()
-
+	
 	if main:
-		print(PREFIX + "Main does exist")
+		_print_debug("Main does exist")
 		if menu:
-			print(PREFIX + "Menu does exist")
+			_print_debug("Menu does exist")
 			main.add_child(menu)
 		else:
-			print(PREFIX + "Menu doesn't exist")
+			_print_debug("Menu doesn't exist")
 	else:
-		print(PREFIX + "Menu doesn't exist")	
+		_print_debug("Menu doesn't exist")
 
-	print(PREFIX + "I have injected to the hud  - 2")
+	_print_debug("I have injected to the hud  - 2")
 
 func update_title(title):
-	print(PREFIX + "I have sent a packet")
+	_print_debug("I have sent a packet")
 	Network._send_P2P_Packet({"type": "update_title", "title": title}, "peers", 2, Network.CHANNELS.ACTOR_UPDATE)
+
+func _print_debug(message):
+	if not DEBUG:
+		return
+	print(PREFIX + message)

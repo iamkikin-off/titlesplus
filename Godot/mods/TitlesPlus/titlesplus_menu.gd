@@ -26,7 +26,6 @@ func _on_Exit_pressed():
 	anims.play("CloseTitles")
 	isOpen = false
 	$Open.disabled = false
-	print("Exited")
 
 func _on_Submit_pressed():
 	if titles_plus != null:
@@ -41,8 +40,6 @@ func _on_Submit_pressed():
 			PlayerData._send_notification("Title set to: " + custom_title)
 	
 		print("Submited!")
-	else:
-		print("Oh")
 
 func _on_Open_pressed():
 	if not isOpen:
