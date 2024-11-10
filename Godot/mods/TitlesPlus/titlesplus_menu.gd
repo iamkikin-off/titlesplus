@@ -31,11 +31,15 @@ func _on_Exit_pressed():
 func _on_Submit_pressed():
 	if titles_plus != null:
 		var custom_title = $Panel/CustomTitle.text
+	
+		if str(custom_title).length() > 32:
+			PlayerData._send_notification("Titles can't exceed the limit of 32 chars!", 1)
+		else:
+			title_api.register_title(Network.STEAM_ID, custom_title)
+			titles_plus.sendTitle(custom_title)
 		
-		title_api.register_title(Network.STEAM_ID, custom_title)
-		titles_plus.sendTitle(custom_title)
-		
-		PlayerData._send_notification("Title set to: " + custom_title)
+			PlayerData._send_notification("Title set to: " + custom_title)
+	
 		print("Submited!")
 	else:
 		print("Oh")
