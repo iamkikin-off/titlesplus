@@ -33,11 +33,14 @@ func _on_Submit_pressed():
 	if titles_plus != null:
 		var custom_title = $MainMenu/CustomTitle.text
 		
-		title_api.register_title(Network.STEAM_ID, custom_title)
-		titles_plus.sendTitle(custom_title)
+		if str(custom_title).length() > 32:
+			PlayerData._send_notification("Title can't exceed 32 chars!", 1)
+		else:
+			title_api.register_title(Network.STEAM_ID, custom_title)
+			titles_plus.sendTitle(custom_title)
 		
-		PlayerData._send_notification("Title set to: " + custom_title)
-		print("Submited!")
+			PlayerData._send_notification("Title set to: " + custom_title)
+			print("Submited!")
 
 
 func _on_Open_pressed():
@@ -64,3 +67,12 @@ func _on_TRANS_pressed():
 	
 	title_api.register_title(Network.STEAM_ID, title)
 	titles_plus.sendTitle(title)
+
+
+func _on_Preferences_pressed():
+	$MainMenu/Presets.disabled = true
+	$Anims.play("OpenPreferences")
+
+func _on_ExitPreferences_pressed():
+	$MainMenu/Presets.disabled = false
+	$Anims.play("ClosePreferences")

@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
+[ext_resource path="res://mods/TitlesPlus/Assets/UI/tag.png" type="Texture" id=1]
 [ext_resource path="res://mods/TitlesPlus/titlesplus_menu.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons62.png" type="Texture" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.737255, 0.580392, 0.376471, 1 )
@@ -132,7 +131,6 @@ margin_left = 91.88
 margin_top = -168.08
 margin_right = 154.0
 margin_bottom = -239.0
-theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Open" type="Button" parent="."]
@@ -140,11 +138,11 @@ anchor_left = 0.75
 anchor_top = -0.071
 anchor_right = 0.75
 anchor_bottom = -0.071
-margin_left = -84.75
-margin_top = -61.025
-margin_right = -19.75
-margin_bottom = 5.975
-icon = ExtResource( 3 )
+margin_left = -84.542
+margin_top = -67.3629
+margin_right = -8.54199
+margin_bottom = 8.63708
+icon = ExtResource( 1 )
 
 [node name="MainMenu" type="Panel" parent="."]
 anchor_left = 1.0
@@ -164,7 +162,7 @@ margin_bottom = 279.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Scroll"]
 margin_right = 352.0
-margin_bottom = 566.0
+margin_bottom = 356.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -327,26 +325,26 @@ margin_right = 992.0
 margin_bottom = 180.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Presets/Scroll"]
-margin_right = 966.0
-margin_bottom = 110.0
+margin_right = 978.0
+margin_bottom = 93.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="[LAMEDEV]" type="Button" parent="Presets/Scroll/VBoxContainer"]
-margin_right = 966.0
-margin_bottom = 34.0
+margin_right = 978.0
+margin_bottom = 20.0
 text = "[LAMEDEV]"
 
 [node name="[CONTRIBUTOR]" type="Button" parent="Presets/Scroll/VBoxContainer"]
-margin_top = 38.0
-margin_right = 966.0
-margin_bottom = 72.0
+margin_top = 24.0
+margin_right = 978.0
+margin_bottom = 44.0
 text = "[CONTRIBUTOR]"
 
 [node name="[TRANS]" type="Button" parent="Presets/Scroll/VBoxContainer"]
-margin_top = 76.0
-margin_right = 966.0
-margin_bottom = 110.0
+margin_top = 48.0
+margin_right = 978.0
+margin_bottom = 68.0
 text = "[TRANS]"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Presets"]
