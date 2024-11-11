@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/Themes/main.tres" type="Theme" id=1]
 [ext_resource path="res://mods/TitlesPlus/titlesplus_menu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Textures/CosmeticIcons/cosmetic_icons62.png" type="Texture" id=3]
-[ext_resource path="res://mods/TitlesPlus/Assets/UI/Setwings.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.737255, 0.580392, 0.376471, 1 )
@@ -12,31 +11,23 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 0.933333, 0.835294, 1 )
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-anti_aliasing = false
-
-[sub_resource type="Animation" id=2]
-resource_name = "CloseTitles"
+[sub_resource type="Animation" id=4]
+resource_name = "ClosePreferences"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/path = NodePath("Presets:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 0.133972, 0.0384736 ),
+"times": PoolRealArray( 0, 0.5, 0.501 ),
+"transitions": PoolRealArray( 0.18301, 0.032352, 1 ),
 "update": 0,
-"values": [ Vector2( 35, 5 ), Vector2( 491, 5 ) ]
+"values": [ Vector2( -990, -598 ), Vector2( -990, -1150.98 ), Vector2( -990, -846 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Panel:visible")
+tracks/1/path = NodePath("Presets:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -48,11 +39,67 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=2]
+resource_name = "CloseTitles"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMenu:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.133972, 0.0384736 ),
+"update": 0,
+"values": [ Vector2( 35, 5 ), Vector2( 491, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "OpenPreferences"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Presets:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 0.196146, 0.0262779 ),
+"update": 0,
+"values": [ Vector2( -990, -846 ), Vector2( -990, -598 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Presets:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "OpenTitles"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Panel:rect_position")
+tracks/0/path = NodePath("MainMenu:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -64,7 +111,7 @@ tracks/0/keys = {
 "values": [ Vector2( 491, 5 ), Vector2( 35, 5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Panel:visible")
+tracks/1/path = NodePath("MainMenu:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -82,140 +129,139 @@ anchor_top = 0.726
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 91.88
-margin_top = -20.08
+margin_top = -168.08
 margin_right = 154.0
-margin_bottom = -91.0
+margin_bottom = -239.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Open" type="Button" parent="."]
-anchor_left = 0.671
-anchor_top = 0.713
-anchor_right = 0.671
-anchor_bottom = 0.713
-margin_left = -189.007
-margin_top = 59.575
-margin_right = 12.9931
-margin_bottom = 123.575
-text = "OPEN TITLES+"
+anchor_left = 0.75
+anchor_top = -0.071
+anchor_right = 0.75
+anchor_bottom = -0.071
+margin_left = -84.75
+margin_top = -61.025
+margin_right = -19.75
+margin_bottom = 5.975
 icon = ExtResource( 3 )
 
-[node name="Panel" type="Panel" parent="."]
+[node name="MainMenu" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -126.0
+margin_left = -126.003
 margin_top = 5.0
-margin_right = 248.0
-margin_bottom = 185.0
+margin_right = 247.997
+margin_bottom = 206.0
 rect_scale = Vector2( 1.07009, 1.07009 )
 
-[node name="Scroll" type="ScrollContainer" parent="Panel"]
+[node name="Scroll" type="ScrollContainer" parent="MainMenu"]
 visible = false
 margin_left = 14.0
 margin_top = 109.0
 margin_right = 366.0
 margin_bottom = 279.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Scroll"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/Scroll"]
 margin_right = 352.0
 margin_bottom = 566.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_right = 340.0
 margin_bottom = 34.0
 text = "Scout"
 
-[node name="Button2" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button2" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 38.0
 margin_right = 340.0
 margin_bottom = 72.0
 text = "Lamedev"
 
-[node name="Button3" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button3" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 76.0
 margin_right = 340.0
 margin_bottom = 110.0
 text = "Other cool title that is cool"
 
-[node name="Button4" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button4" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 114.0
 margin_right = 340.0
 margin_bottom = 148.0
 text = "Other cool title that is cool"
 
-[node name="Button5" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button5" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 152.0
 margin_right = 340.0
 margin_bottom = 186.0
 text = "Other cool title that is cool"
 
-[node name="Button6" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button6" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 190.0
 margin_right = 340.0
 margin_bottom = 224.0
 text = "Other cool title that is cool"
 
-[node name="Button7" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button7" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 228.0
 margin_right = 340.0
 margin_bottom = 262.0
 text = "Other cool title that is cool"
 
-[node name="Button8" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button8" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 266.0
 margin_right = 340.0
 margin_bottom = 300.0
 text = "Other cool title that is cool"
 
-[node name="Button9" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button9" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 304.0
 margin_right = 340.0
 margin_bottom = 338.0
 text = "Other cool title that is cool"
 
-[node name="Button10" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button10" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 342.0
 margin_right = 340.0
 margin_bottom = 376.0
 text = "Other cool title that is cool"
 
-[node name="Button11" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button11" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 380.0
 margin_right = 340.0
 margin_bottom = 414.0
 text = "Other cool title that is cool"
 
-[node name="Button12" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button12" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 418.0
 margin_right = 340.0
 margin_bottom = 452.0
 text = "Other cool title that is cool"
 
-[node name="Button13" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button13" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 456.0
 margin_right = 340.0
 margin_bottom = 490.0
 text = "Other cool title that is cool"
 
-[node name="Button14" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button14" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 494.0
 margin_right = 340.0
 margin_bottom = 528.0
 text = "Other cool title that is cool"
 
-[node name="Button15" type="Button" parent="Panel/Scroll/VBoxContainer"]
+[node name="Button15" type="Button" parent="MainMenu/Scroll/VBoxContainer"]
 margin_top = 532.0
 margin_right = 340.0
 margin_bottom = 566.0
 text = "Other cool title that is cool"
 
-[node name="Info" type="RichTextLabel" parent="Panel"]
-margin_left = 20.5591
-margin_top = 37.0
-margin_right = 357.559
-margin_bottom = 112.446
+[node name="Info" type="RichTextLabel" parent="MainMenu"]
+margin_left = 21.0
+margin_top = 47.0
+margin_right = 358.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 148.586, 49.9086 )
 bbcode_enabled = true
 bbcode_text = "[color=green][wave]                  Titles+[/wave]
@@ -223,73 +269,105 @@ bbcode_text = "[color=green][wave]                  Titles+[/wave]
 text = "                  Titles+
        Powered by - TitleAPI"
 
-[node name="CustomTitle" type="LineEdit" parent="Panel"]
+[node name="CustomTitle" type="LineEdit" parent="MainMenu"]
 margin_left = 12.0
-margin_top = 119.0
+margin_top = 141.11
 margin_right = 262.0
-margin_bottom = 153.0
+margin_bottom = 175.11
 text = "Your custom title here :3"
 
-[node name="Bar" type="Panel" parent="Panel"]
+[node name="Bar" type="Panel" parent="MainMenu"]
 margin_left = 21.0
-margin_top = 110.0
+margin_top = 125.886
 margin_right = 352.0
-margin_bottom = 112.0
+margin_bottom = 127.886
 custom_styles/panel = SubResource( 1 )
 
-[node name="Exit" type="Button" parent="Panel"]
-margin_left = 272.0
-margin_top = 17.0
-margin_right = 355.0
-margin_bottom = 53.0
+[node name="Exit" type="Button" parent="MainMenu"]
+margin_left = 280.0
+margin_top = 13.6069
+margin_right = 363.0
+margin_bottom = 47.6069
 text = "EXIT"
 
-[node name="Submit" type="Button" parent="Panel"]
+[node name="Presets" type="Button" parent="MainMenu"]
+margin_left = 16.0
+margin_top = 14.0
+margin_right = 109.0
+margin_bottom = 48.0
+text = "PRESETS"
+
+[node name="Submit" type="Button" parent="MainMenu"]
 margin_left = 267.0
-margin_top = 119.0
+margin_top = 141.11
 margin_right = 361.0
-margin_bottom = 153.0
+margin_bottom = 175.11
 text = "SUBMIT"
 
-[node name="Settings" type="Button" parent="Panel"]
-margin_left = 15.0
-margin_top = 9.0
-margin_right = 79.0
-margin_bottom = 73.0
-icon = ExtResource( 4 )
+[node name="Presets" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1614.0
+margin_top = -988.0
+margin_right = -607.0
+margin_bottom = -797.0
+rect_scale = Vector2( 1.07009, 1.07486 )
 
-[node name="HoverOn" type="Panel" parent="Panel/Settings"]
-visible = false
-margin_left = -286.005
-margin_top = -9.0
-margin_right = -90.0052
-margin_bottom = 48.0
-rect_scale = Vector2( 1.35199, 1.35199 )
-custom_styles/panel = SubResource( 4 )
+[node name="Exit" type="Button" parent="Presets"]
+margin_left = 907.985
+margin_top = 10.8159
+margin_right = 990.985
+margin_bottom = 44.8159
+text = "EXIT"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Settings/HoverOn"]
-margin_left = 7.62378
-margin_top = 8.47607
-margin_right = 187.624
-margin_bottom = 47.4761
-rect_scale = Vector2( 0.574033, 0.574033 )
+[node name="Scroll" type="ScrollContainer" parent="Presets"]
+margin_left = 14.0
+margin_top = 87.0
+margin_right = 992.0
+margin_bottom = 180.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Presets/Scroll"]
+margin_right = 966.0
+margin_bottom = 110.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="[LAMEDEV]" type="Button" parent="Presets/Scroll/VBoxContainer"]
+margin_right = 966.0
+margin_bottom = 34.0
+text = "[LAMEDEV]"
+
+[node name="[CONTRIBUTOR]" type="Button" parent="Presets/Scroll/VBoxContainer"]
+margin_top = 38.0
+margin_right = 966.0
+margin_bottom = 72.0
+text = "[CONTRIBUTOR]"
+
+[node name="[TRANS]" type="Button" parent="Presets/Scroll/VBoxContainer"]
+margin_top = 76.0
+margin_right = 966.0
+margin_bottom = 110.0
+text = "[TRANS]"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Presets"]
+margin_left = 16.0
+margin_top = 47.0
+margin_right = 991.0
+margin_bottom = 84.0
 custom_colors/default_color = Color( 0.352941, 0.458824, 0.352941, 1 )
-text = "Settings"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Settings/HoverOn"]
-margin_left = 8.0
-margin_top = 27.0
-margin_right = 322.0
-margin_bottom = 66.0
-rect_scale = Vector2( 0.574033, 0.574033 )
-text = "Coming soon because yeah"
+text = "Premade Titles :3"
 
 [node name="Anims" type="AnimationPlayer" parent="."]
+anims/ClosePreferences = SubResource( 4 )
 anims/CloseTitles = SubResource( 2 )
+anims/OpenPreferences = SubResource( 5 )
 anims/OpenTitles = SubResource( 3 )
 
 [connection signal="pressed" from="Open" to="." method="_on_Open_pressed"]
-[connection signal="pressed" from="Panel/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="Panel/Submit" to="." method="_on_Submit_pressed"]
-[connection signal="mouse_entered" from="Panel/Settings" to="." method="_on_Settings_mouse_entered"]
-[connection signal="mouse_exited" from="Panel/Settings" to="." method="_on_Settings_mouse_exited"]
+[connection signal="pressed" from="MainMenu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="MainMenu/Presets" to="." method="_on_Preferences_pressed"]
+[connection signal="pressed" from="MainMenu/Submit" to="." method="_on_Submit_pressed"]
+[connection signal="pressed" from="Presets/Exit" to="." method="_on_ExitPreferences_pressed"]
+[connection signal="pressed" from="Presets/Scroll/VBoxContainer/[LAMEDEV]" to="." method="_on_LAMEDEV_pressed"]
+[connection signal="pressed" from="Presets/Scroll/VBoxContainer/[CONTRIBUTOR]" to="." method="_on_CONTRIBUTOR_pressed"]
+[connection signal="pressed" from="Presets/Scroll/VBoxContainer/[TRANS]" to="." method="_on_TRANS_pressed"]
